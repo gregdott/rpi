@@ -5,8 +5,8 @@ import socket
 
 
 def client_program():
-    #host = socket.gethostname()  # as both code is running on same pc
-    host = "206.189.120.165"
+    host = socket.gethostname()  # as both code is running on same pc
+    
     port = 5000  # socket server port number
 
     client_socket = socket.socket()  # instantiate
