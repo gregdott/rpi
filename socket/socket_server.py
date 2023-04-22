@@ -2,14 +2,17 @@
 # Minor modifications have been done (if any at all)
 
 import socket
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
 def server_program():
     # get the hostname
-    host = socket.gethostname()
+    host = os.getenv('HOST_IP')
     port = 5000  # initiate port no above 1024
 
-    server_socket = socket.socket()  # get instance
+    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # get instance
     # look closely. The bind() function takes tuple as argument
     server_socket.bind((host, port))  # bind host address and port together
 

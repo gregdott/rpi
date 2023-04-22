@@ -2,14 +2,18 @@
 # Minor modifications have been done (if any at all)
 
 import socket
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
 def client_program():
-    host = socket.gethostname()  # as both code is running on same pc
-    
+    #host = socket.gethostname()  # as both code is running on same pc
+    host = os.getenv('HOST_IP')
+    print(host)
     port = 5000  # socket server port number
 
-    client_socket = socket.socket()  # instantiate
+    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # instantiate
     client_socket.connect((host, port))  # connect to the server
 
     message = input(" -> ")  # take input
