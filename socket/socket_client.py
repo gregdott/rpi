@@ -9,9 +9,8 @@ load_dotenv()
 
 def client_program():
     host = socket.gethostname()  # as both code is running on same pc
-    #host = "192.168.99.1"
-    #host = os.getenv('HOST_IP')
-    print(host)
+    host = os.getenv('HOST_IP')
+    
     port = 5000  # socket server port number
 
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # instantiate
